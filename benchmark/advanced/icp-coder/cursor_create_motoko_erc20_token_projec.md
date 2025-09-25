@@ -1,4 +1,4 @@
-# Create Motoko ERC20 token project
+# Create Motoko Fungible Token project
 
 _Exported on 9/21/2025 at 15:14:42 GMT+7 from Cursor (1.6.42)_
 
@@ -6,7 +6,7 @@ _Exported on 9/21/2025 at 15:14:42 GMT+7 from Cursor (1.6.42)_
 
 **User**
 
-Create a Motoko project using dfx tool to build an erc20 project, write a readme on how to run
+Create a Motoko project using dfx tool to build an fungible token project, write a readme on how to run
 
 - create a token with name CQT
 - Function:
@@ -20,11 +20,11 @@ use motoko-coder generate_motoko_code to help you
 
 **Cursor**
 
-I'll set up a new DFX Motoko project and generate the ERC-20 canister code (with transfer, mint, and a randomness-based game), then wire it into the project and add a README with run instructions. Now creating the project scaffold and generating the Motoko code in parallel.
+I'll set up a new DFX Motoko project and generate the fungible token canister code (with transfer, mint, and a randomness-based game), then wire it into the project and add a README with run instructions. Now creating the project scaffold and generating the Motoko code in parallel.
 
 I’m going to scaffold the project files, confirm the structure, then replace `src/cqt/main.mo` with the generated token canister implementation and add a README. After that, I’ll build locally to ensure it compiles.
 
-I'll create the project files (dfx.json, Motoko canister, README, .gitignore) and wire the ERC-20 logic with the guessing game, then we'll try a local build if possible.
+I'll create the project files (dfx.json, Motoko canister, README, .gitignore) and wire the fungible token logic with the guessing game, then we'll try a local build if possible.
 
 I'll create the necessary files for a minimal dfx Motoko project and add the generated code and README. Then I'll run a build.
 
@@ -73,7 +73,6 @@ actor CQT {
         owner := Principal.fromActor(this);
     };
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -173,7 +172,6 @@ actor class CQT(initOwner : Principal) = this {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -257,7 +255,7 @@ actor class CQT(initOwner : Principal) = this {
 *** Add File: E:\partime\benchmark-project\README.md
 +# CQT Token (Motoko / DFX)
 
-Fungible token canister (ERC-20 style) in Motoko with a simple guessing game that mints a prize on a correct guess.
+Fungible token canister in Motoko with a simple guessing game that mints a prize on a correct guess.
 
 ## Requirements
 
@@ -345,7 +343,7 @@ dfx stop
 *** Add File: E:\partime\benchmark-project\README.md
 # CQT Token (Motoko / DFX)
 
-Fungible token canister (ERC-20 style) in Motoko with a simple guessing game that mints a prize on a correct guess.
+Fungible token canister in Motoko with a simple guessing game that mints a prize on a correct guess.
 
 ## Requirements
 
@@ -432,7 +430,7 @@ Creating the README and .gitignore, then checking for linter issues in `src/cqt/
 ```markdown
 # CQT Token (Motoko / DFX)
 
-Fungible token canister (ERC-20 style) in Motoko with a simple guessing game that mints a prize on a correct guess.
+Fungible token canister in Motoko with a simple guessing game that mints a prize on a correct guess.
 
 ## Requirements
 
@@ -563,7 +561,6 @@ actor class CQT(initOwner : Principal) = this {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -703,7 +700,6 @@ actor class CQT(initOwner : Principal) = this {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -807,7 +803,6 @@ actor class CQT(initOwner : Principal) = this {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -923,7 +918,6 @@ actor class CQT(initOwner : Principal) = persistent {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1029,7 +1023,6 @@ actor class CQT(initOwner : Principal) = actor {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1131,7 +1124,6 @@ actor class CQT(initOwner : Principal) {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1235,7 +1227,6 @@ actor class CQT(initOwner : Principal) {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1339,7 +1330,6 @@ actor class CQT(initOwner : Principal) {
     let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1598,7 +1588,6 @@ persistent actor class CQT(initOwner : Principal) {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
@@ -1771,7 +1760,6 @@ persistent actor class CQT(initOwner : Principal) {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };

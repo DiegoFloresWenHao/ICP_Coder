@@ -1,23 +1,23 @@
-# Create Motoko ERC20 token project
+# Create Motoko Fungible Token project
+
 _Exported on 9/21/2025 at 15:14:21 GMT+7 from Cursor (1.6.27)_
 
 ---
 
 **User**
 
-Create a Motoko project using dfx tool to build an erc20 project, write a readme on how to run
+Create a Motoko project using dfx tool to build an fungible token project, write a readme on how to run
 create a token with name CQT
 Function:
 transfer, mint
 Create random number
 generate random number function, if match user win some token
 
-
 ---
 
 **Cursor**
 
-I'll scaffold a DFX Motoko project, implement an ERC20-like token canister named CQT with transfer, mint, and a randomness-based game, and add a README with run instructions. Creating the todo list and then adding the necessary files.
+I'll scaffold a DFX Motoko project, implement an fungible token canister named CQT with transfer, mint, and a randomness-based game, and add a README with run instructions. Creating the todo list and then adding the necessary files.
 
 I'll fetch the correct Motoko randomness API usage to implement a secure random number generator, then scaffold the DFX project and implement the token and game.
 
@@ -885,7 +885,7 @@ actor {
 ```markdown
 # CQT Token (Motoko)
 
-ERC20-like Motoko canister implementing `CQT` with `mint`, `transfer`, balances, and a randomness-based guessing game that mints a reward on win.
+Fungible token Motoko canister implementing `CQT` with `mint`, `transfer`, balances, and a randomness-based guessing game that mints a reward on win.
 
 ## Prerequisites
 
@@ -949,6 +949,7 @@ dfx canister call cqt_token_backend guessToWin '(42:nat, 100:nat)'
 ```
 
 Notes:
+
 - Randomness uses the management canister `raw_rand` via `mo:base/Random.blob()` and derives a 64-bit value from returned bytes, then takes modulo bound.
 - `mint` is intentionally unrestricted for demo; restrict in production.
 
@@ -972,7 +973,9 @@ cd /Users/nobody1/Work/q3x/test_motoko/cqt_token
 dfx start --background
 dfx deploy
 ```
+
 - Mint/transfer/check:
+
 ```bash
 ME=$(dfx identity get-principal)
 dfx canister call cqt_token_backend mint "(principal \"$ME\", 1000:nat)"
@@ -981,7 +984,9 @@ dfx identity new bob --storage-mode=plaintext
 BOB=$(dfx identity use bob >/dev/null; dfx identity get-principal; dfx identity use default >/dev/null;)
 dfx canister call cqt_token_backend transfer "(principal \"$BOB\", 200:nat)"
 ```
+
 - Random/game:
+
 ```bash
 dfx canister call cqt_token_backend generateRandomNumber '(100:nat)'
 dfx canister call cqt_token_backend guessToWin '(42:nat, 100:nat)'
@@ -1008,4 +1013,3 @@ dfx canister call cqt_token_backend transfer "(principal \"$BOB\", 200:nat)"
 dfx canister call cqt_token_backend generateRandomNumber '(100:nat)'
 dfx canister call cqt_token_backend guessToWin '(42:nat, 100:nat)'
 ```
-

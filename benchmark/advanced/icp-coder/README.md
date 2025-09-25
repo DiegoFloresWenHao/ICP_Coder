@@ -1,6 +1,6 @@
 # CQT Token (Motoko / DFX)
 
-Fungible token canister (ERC-20 style) in Motoko with a simple guessing game that mints a prize on a correct guess.
+Fungible token canister in Motoko with a simple guessing game that mints a prize on a correct guess.
 
 ## Requirements
 

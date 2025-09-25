@@ -1,6 +1,6 @@
 # CQT Token (Motoko)
 
-ERC20-like Motoko canister implementing `CQT` with `mint`, `transfer`, balances, and a randomness-based guessing game that mints a reward on win.
+Fungible token Motoko canister implementing `CQT` with `mint`, `transfer`, balances, and a randomness-based guessing game that mints a reward on win.
 
 ## Prerequisites
 
@@ -64,6 +64,7 @@ dfx canister call cqt_token_backend guessToWin '(42:nat, 100:nat)'
 ```
 
 Notes:
+
 - Randomness uses the management canister `raw_rand` via `mo:base/Random.blob()` and derives a 64-bit value from returned bytes, then takes modulo bound.
 - `mint` is intentionally unrestricted for demo; restrict in production.
 

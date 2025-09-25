@@ -22,7 +22,6 @@ persistent actor class CQT(initOwner : Principal) {
     transient let PRIZE_AMOUNT : Nat = 100;
     
 
-    // ERC-20 like interface
     public query func name() : async Text { NAME };
     public query func symbol() : async Text { SYMBOL };
     public query func decimals() : async Nat8 { DECIMALS };
