@@ -1,4 +1,6 @@
-﻿# Motoko Coder
+**This repo has been archived, for new version of this repo, please check: https://github.com/Quantum3-Labs/icp-coder**
+
+ # Motoko Coder
 
 A Retrieval-Augmented Generation (RAG) pipeline for Motoko code search and code generation, powered by ChromaDB, local embeddings, and Google Gemini.
 
